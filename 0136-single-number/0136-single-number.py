@@ -1,16 +1,7 @@
-class Solution(object):
-    def singleNumber(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
-        freq = {}
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        odd = 0
         for i in nums:
-            if i in freq:
-                freq[i] += 1
-            else:
-                freq[i] = 1
+            odd ^= i
         
-        for i in freq:
-            if freq[i] == 1:
-                return i
+        return odd
