@@ -1,10 +1,7 @@
 class Solution:
     def wordPattern(self, pattern: str, s: str) -> bool:
         
-        if len(pattern) != len(s.split()):
-            return False
-        
-        if len(set(list(pattern))) != len(set(s.split())):
+        if len(pattern) != len(s.split()) or len(set(list(pattern))) != len(set(s.split())):
             return False
         
         mappings = {}
