@@ -5,5 +5,5 @@ class Solution:
         """
         for i in range(n):
             nums1[m+i] = nums2[i]
-            
-        nums1 = nums1.sort()
+        
+        nums1.sort()
