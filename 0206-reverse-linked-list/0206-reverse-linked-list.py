@@ -16,4 +16,4 @@ class Solution:
             prev = current
             current = temp
         
-        return prev        
+        return prev
