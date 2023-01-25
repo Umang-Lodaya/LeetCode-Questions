@@ -12,10 +12,8 @@ class Solution(object):
         memo[2] = 2
         
         def climb(n):
-            if n in memo: 
-                return memo[n]
-            else:
+            if n not in memo: 
                 memo[n] = climb(n-1) + climb(n-2)
-                return memo[n]
+            return memo[n]
         
         return climb(n)
