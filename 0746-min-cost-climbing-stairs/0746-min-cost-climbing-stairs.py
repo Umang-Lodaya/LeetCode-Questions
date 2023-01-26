@@ -14,4 +14,4 @@ class Solution:
                 dp0 = dp1
                 dp1 = cur
 
-            return min(dp0,dp1)
+            return min(dp0, dp1)
