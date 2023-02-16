@@ -3,7 +3,6 @@ class Solution:
         intervals.sort()
         i = 1
         while i < len(intervals):
-            # print(i, intervals)
             if intervals[i-1][1] >= intervals[i][0]:
                 s = min(intervals[i-1][0], intervals[i][0])
                 e = max(intervals[i-1][1], intervals[i][1])
