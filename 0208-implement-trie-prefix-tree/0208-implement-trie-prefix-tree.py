@@ -11,7 +11,6 @@ class Trie:
             node = node[ch]
         node['#'] = {}
         
-
     def search(self, word: str) -> bool:
         node = self.root
         for ch in word:
