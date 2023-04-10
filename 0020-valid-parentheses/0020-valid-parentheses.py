@@ -5,6 +5,7 @@ class Solution:
         
         parn = {'(':')', '[':']', '{':'}'}
         stack = []
+        
         for char in s:
             if char in parn.keys():
                 stack.append(char)
@@ -14,8 +15,8 @@ class Solution:
                 open = stack.pop()
                 if(parn[open] != char):
                     return False
-                
-        if(len(stack)>0):
+            
+        if len(stack) > 0:
             return False
         
         return True
