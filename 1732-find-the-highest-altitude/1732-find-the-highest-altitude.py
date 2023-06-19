@@ -3,8 +3,8 @@ class Solution:
         ans = 0
         k = 0
         
-        for x in range(len(gain)):
-            k += gain[x]
+        for x in gain:
+            k += x
             ans = max(ans, k)
             
         return ans
