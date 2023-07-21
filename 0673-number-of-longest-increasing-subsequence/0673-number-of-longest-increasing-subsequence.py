@@ -8,8 +8,10 @@ class Solution:
         for i in range(n):
             for j in range(i):
                 if nums[j] < nums[i]:
-                    if dp[i] < dp[j]+1: dp[i], cnt[i] = dp[j]+1, cnt[j]
-                    elif dp[i] == dp[j]+1: cnt[i] += cnt[j]
+                    if dp[i] < dp[j] + 1: 
+                        dp[i], cnt[i] = dp[j]+1, cnt[j]
+                    elif dp[i] == dp[j] + 1: 
+                        cnt[i] += cnt[j]
             
             m = max(m, dp[i])  
             
