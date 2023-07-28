@@ -5,12 +5,15 @@
 def LCA(root, n1, n2):
     if root == None: return None
     
+    # IF BOTH n1 AND n2 < root, THEN BOTH ARE ON LEFT SIDE
     if root.data > n1 and root.data > n2:
         return LCA(root.left, n1, n2)
         
+    # IF BOTH n1 AND n2 > root, THEN BOTH ARE ON RIGHT SIDE
     if root.data < n1 and root.data < n2:
         return LCA(root.right, n1, n2)
     
+    # ELSE BOTH ARE ON OPPOSITE BRANCHES, THUS ROOT ITSELF BEEN COMMON
     return root
 
 
