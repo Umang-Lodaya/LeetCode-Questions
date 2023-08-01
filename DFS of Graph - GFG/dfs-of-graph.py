@@ -2,21 +2,19 @@
 
 class Solution:
     
-    #Function to return a list containing the DFS traversal of the graph.
     def dfsOfGraph(self, V, adj):
         def dfs(node, graph, visited, component):
-            component.append(node)  # Store answer
-            visited[node] = True  # Mark visited
+            component.append(node)
+            visited[node] = True
         
-            # Traverse to each adjacent node of a node
             for child in graph[node]:
-                if not visited[child]:  # Check whether the node is visited or not
-                    dfs(child, graph, visited, component)  # Call the dfs recursively
+                if not visited[child]:  
+                    dfs(child, graph, visited, component)
     
-        node = 0  # Starting node
-        visited = [False]*V  # Make all nodes to False initially
+        node = 0  
+        visited = [False]*V  
         component = []
-        dfs(node, adj, visited, component)  # Traverse to each node of a graph
+        dfs(node, adj, visited, component)  
         return component
 
 #{ 
