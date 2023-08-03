@@ -9,7 +9,6 @@ class Solution:
             self.permu(ind+1, digits, ans, ds, mapping)
             ds = ds[:-1]
         
-        
     def letterCombinations(self, digits: str) -> List[str]:
         if not digits:
             return []
