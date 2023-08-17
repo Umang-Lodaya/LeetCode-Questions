@@ -8,7 +8,7 @@ class Solution:
                     top = mat[r - 1][c] if r > 0 else math.inf
                     left = mat[r][c - 1] if c > 0 else math.inf
                     mat[r][c] = min(top, left) + 1
-
+        
         for r in range(m - 1, -1, -1):
             for c in range(n - 1, -1, -1):
                 if mat[r][c] > 0:
