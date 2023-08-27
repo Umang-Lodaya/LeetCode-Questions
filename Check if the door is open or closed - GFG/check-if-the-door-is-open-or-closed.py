@@ -5,7 +5,7 @@ class Solution:
         ans = []
         for number in range(1, N + 1):
             root = math.sqrt(number)
-            if int(root + 0.5) ** 2 == number:
+            if int(root) ** 2 == number:
                 ans.append(1)
             else:
                 ans.append(0)
