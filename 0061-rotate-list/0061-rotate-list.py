@@ -20,14 +20,10 @@ class Solution:
         if not head:
             return None
         
-        if not head.next:
-            return head
-        
-        if k == 0:
+        if not head.next or k == 0:
             return head
         
         length = self.getLength(head)
-        # print(length)
         k = k % length
         
         for _ in range(k):
