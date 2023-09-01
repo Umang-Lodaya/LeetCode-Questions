@@ -6,12 +6,8 @@
 #         self.right = right
 class Solution(object):
     def preorderTraversal(self, root):
-        """
-        :type root: TreeNode
-        :rtype: List[int]
-        """
         if not root: 
             return []
-        else:   
-            return [root.val] + self.preorderTraversal(root.left)+ self.preorderTraversal(root.right)
+        else:
+            return [root.val] + self.preorderTraversal(root.left) +  self.preorderTraversal(root.right)
         
