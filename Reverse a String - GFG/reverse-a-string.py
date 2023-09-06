@@ -1,12 +1,8 @@
 #User function Template for python3
 
 class Solution:
-    def reverseWord(self, s):
-        s = list(s)
-        for i in range(len(s) // 2):
-            s[i], s[len(s) - 1 - i] = s[len(s) - 1 - i], s[i]
-        
-        return ''.join(s)
+     def reverseWord(self, s: str) -> str:
+        return s[::-1]
 
 
 #{ 
