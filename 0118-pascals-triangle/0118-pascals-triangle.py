@@ -10,7 +10,6 @@ class Solution:
                     e = C[num-2][i-1] + C[num-2][i]
                     ls.append(e)
             
-            # print(ls)
+        
             C.append(ls)
-        # print(C)
         return C
