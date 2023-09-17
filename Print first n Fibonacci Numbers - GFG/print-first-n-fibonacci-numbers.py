@@ -5,19 +5,14 @@ class Solution:
     def printFibb(self, n):
         if n == 1:
             return [1]
-            
-        a = 0
-        b = 1
-        ans = [1]
+        if n == 2:
+            return [1, 1]
         
-        for i in range(n - 1):
-            c = a + b
-            ans.append(c)
-            a = b
-            b = c
+        res = [1, 1]
+        for i in range(n - 2):
+            res.append(res[-1] + res[-2])
         
-        return ans
-
+        return res
 
 #{ 
  # Driver Code Starts
