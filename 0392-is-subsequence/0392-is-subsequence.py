@@ -4,6 +4,7 @@ class Solution:
             return True
         if t == "":
             return False
+        
         s_p = 0
         t_p = 0
         
