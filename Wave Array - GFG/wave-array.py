@@ -4,8 +4,6 @@ from typing import List
 class Solution:
     def convertToWave(self, n : int, arr : List[int]) -> None:
         for i in range(0, n - 1, 2):
-            if i == n - 1:
-                break
             arr[i], arr[i+1] = arr[i+1], arr[i]
 
 
