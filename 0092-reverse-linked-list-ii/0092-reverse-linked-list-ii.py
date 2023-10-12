@@ -11,6 +11,7 @@ class Solution:
                 while m <= right:
                     current.next, prev, current = prev, current, current.next
                     m += 1
+                    
                 node.next = current
                 return prev
             
