@@ -1,21 +1,16 @@
 #User function Template for python3
 
 class Solution:
-    ans = -1
     def floor(self, root, x):
-        if not root:
-            return -1
+        ans = -1
+        while root:
+            if root.data <= x:
+                ans = root.data
+                root = root.right
+            else:
+                root = root.left
         
-        if root.data == x:
-            return x
-        
-        if root.data < x:
-            self.ans = max(self.ans, root.data)
-            self.ans = max(self.ans, self.floor(root.right, x))
-            return self.ans
-        
-        self.ans = max(self.ans, self.floor(root.left, x))
-        return self.ans
+        return ans
 
 
 #{ 
