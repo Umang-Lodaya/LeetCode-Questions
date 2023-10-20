@@ -3,7 +3,6 @@ class Solution:
         d = {}
         for i, j in enumerate(nums):
             r = target - j
-            if r in d: return [d[r], i]
+            if r in d:
+                return [d[r], i]
             d[j] = i
-        
-        
