@@ -5,7 +5,7 @@
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
-<pre><strong>Input:</strong> nums = [-1,0,1,2,-1,-4]
+<pre style="position: relative;"><strong>Input:</strong> nums = [-1,0,1,2,-1,-4]
 <strong>Output:</strong> [[-1,-1,2],[-1,0,1]]
 <strong>Explanation:</strong> 
 nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.
@@ -13,21 +13,21 @@ nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.
 nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.
 The distinct triplets are [-1,0,1] and [-1,-1,2].
 Notice that the order of the output and the order of the triplets does not matter.
-</pre>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
 
 <p><strong class="example">Example 2:</strong></p>
 
-<pre><strong>Input:</strong> nums = [0,1,1]
+<pre style="position: relative;"><strong>Input:</strong> nums = [0,1,1]
 <strong>Output:</strong> []
 <strong>Explanation:</strong> The only possible triplet does not sum up to 0.
-</pre>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
 
 <p><strong class="example">Example 3:</strong></p>
 
-<pre><strong>Input:</strong> nums = [0,0,0]
+<pre style="position: relative;"><strong>Input:</strong> nums = [0,0,0]
 <strong>Output:</strong> [[0,0,0]]
 <strong>Explanation:</strong> The only possible triplet sums up to 0.
-</pre>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
 
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
