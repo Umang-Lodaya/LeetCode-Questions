@@ -4,15 +4,15 @@
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
-<pre><strong>Input:</strong> n = 16
+<pre style="position: relative;"><strong>Input:</strong> n = 16
 <strong>Output:</strong> true
-</pre><p><strong class="example">Example 2:</strong></p>
-<pre><strong>Input:</strong> n = 5
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre><p><strong class="example">Example 2:</strong></p>
+<pre style="position: relative;"><strong>Input:</strong> n = 5
 <strong>Output:</strong> false
-</pre><p><strong class="example">Example 3:</strong></p>
-<pre><strong>Input:</strong> n = 1
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre><p><strong class="example">Example 3:</strong></p>
+<pre style="position: relative;"><strong>Input:</strong> n = 1
 <strong>Output:</strong> true
-</pre>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
 
