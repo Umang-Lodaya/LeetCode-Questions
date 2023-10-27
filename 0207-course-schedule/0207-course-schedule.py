@@ -1,27 +1,33 @@
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
-        mp = defaultdict(list)
-        for a, b in prerequisites:
-            mp[a] += [b]
+        preReq = {i: [] for i in range(numCourses)}
+        for curr, pre in prerequisites:
+            preReq[curr].append(pre)
         
-        bl = [0] * numCourses
-        def test(ind):
-            nonlocal bl
-            if bl[ind] == 1:
-                return True
-            if bl[ind] == 2:
+        cycle = [False for i in range(numCourses)]
+        visited = [False for i in range(numCourses)]
+        output = []
+        
+        def dfs(node):
+            if cycle[node]:
                 return False
             
-            bl[ind] = 1
-            for i in mp[ind]:
-                if test(i):
-                    return True
-                
-            bl[ind] = 2
-            return False
-        
-        for a, b in prerequisites:
-            if not bl[a] and test(a):
+            if visited[node]:
+                return True
+            
+            cycle[node] = True
+            visited[node] = True
+            for pre in preReq[node]:
+                if dfs(pre) == False:
                     return False
-
+            
+            cycle[node] = False
+            output.append(node)
+            return True
+        
+        for i in range(numCourses):
+            if dfs(i) == False:
+                return False
+        
+        print(output)
         return True
