@@ -3,40 +3,19 @@ class Solution:
         """
         Do not return anything, modify matrix in-place instead.
         """
-        n_rows = len(matrix)
-        n_cols = len(matrix[0])
+        m, n = len(matrix), len(matrix[0])
+        top = [False for j in range(n)]
+        left = [False for i in range(m)]
         
-        isFirstRowZero = False
-        isFirstColZero = False
+        for i in range(m):
+            for j in range(n):
+                if matrix[i][j] == 0:
+                    top[j] = True
+                    left[i] = True
         
-        for row in range(n_rows):
-            if matrix[row][0] == 0:
-                isFirstColZero = True
-                break
+        for i in range(m):
+            for j in range(n):
+                if left[i] or top[j]:
+                    matrix[i][j] = 0
         
-        for col in range(n_cols):
-            if matrix[0][col] == 0:
-                isFirstRowZero = True
-                break
         
-        for row in range(1, n_rows):
-            for col in range(1, n_cols):
-                if matrix[row][col] == 0:
-                    matrix[row][0] = 0
-                    matrix[0][col] = 0
-        
-        for row in range(1, n_rows):
-            for col in range(1, n_cols):
-                if matrix[row][0] == 0 or matrix[0][col] == 0:
-                    matrix[row][col] = 0
-        
-        if isFirstRowZero:
-            for col in range(n_cols):
-                matrix[0][col] = 0
-                
-        if isFirstColZero:
-            for row in range(n_rows):
-                matrix[row][0] = 0
-                
-        for row in matrix:
-            print(row)
