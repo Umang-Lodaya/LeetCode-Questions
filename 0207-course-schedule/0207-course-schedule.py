@@ -1,33 +1,29 @@
 class Solution:
-    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
-        preReq = {i: [] for i in range(numCourses)}
-        for curr, pre in prerequisites:
-            preReq[curr].append(pre)
+    def canFinish(self, n: int, pre: List[List[int]]) -> bool:
+        preReq = {i: [] for i in range(n)}
+        for curr, p in pre:
+            preReq[curr].append(p)
         
-        cycle = [False for i in range(numCourses)]
-        visited = [False for i in range(numCourses)]
-        output = []
+        cycle = [False for i in range(n)]
+        visited = [False for i in range(n)]
+        seq = []
         
         def dfs(node):
-            if cycle[node]:
-                return False
-            
-            if visited[node]:
-                return True
+            if cycle[node]: return False
+            if visited[node]: return True
             
             cycle[node] = True
             visited[node] = True
-            for pre in preReq[node]:
-                if dfs(pre) == False:
+            
+            for p in preReq[node]:
+                if dfs(p) == False:
                     return False
             
             cycle[node] = False
-            output.append(node)
-            return True
+            seq.append(node)
         
-        for i in range(numCourses):
+        for i in range(n):
             if dfs(i) == False:
                 return False
         
-        print(output)
-        return True
+        return True            
