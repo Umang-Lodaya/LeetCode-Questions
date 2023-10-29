@@ -1,21 +1,26 @@
 class Solution:
     def floodFill(self, image: List[List[int]], sr: int, sc: int, color: int) -> List[List[int]]:
+        m, n = len(image), len(image[0])
         
-        start_color = image[sr][sc]
+        changes = [[-1, 0], [1, 0], [0, -1], [0, 1]]
         
-        def flood_fill(x, y):
-            if x < 0 or x >= len(image): return
-            if y < 0 or y >= len(image[0]): return
-            
-            if image[x][y] == color: return
-            if image[x][y] != start_color: return
-            
-            image[x][y] = color
-            
-            flood_fill(x-1, y)
-            flood_fill(x+1, y)
-            flood_fill(x, y+1)
-            flood_fill(x, y-1)
+        if image[sr][sc] == color:
+            return image
         
-        flood_fill(sr, sc)
+        startColor = image[sr][sc]
+        image[sr][sc] = color
+        
+        queue = [[sr, sc]]
+        while queue:
+            for _ in range(len(queue)):
+                i, j = queue.pop(0)
+                for di, dj in changes:
+                    ni, nj = i + di, j + dj
+                    if 0 <= ni <= m - 1 and 0 <= nj <= n - 1:
+                        if image[ni][nj] == startColor:
+                            image[ni][nj] = color
+                            queue.append([ni, nj])
+                
+                image[i][j] = color
+        
         return image
