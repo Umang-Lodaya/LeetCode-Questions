@@ -2,20 +2,27 @@
 
 class Solution:
     
+    #Function to return a list containing the DFS traversal of the graph.
     def dfsOfGraph(self, V, adj):
-        def dfs(node, graph, visited, component):
-            component.append(node)
-            visited[node] = True
+        if V == 1:
+            return [0]
         
-            for child in graph[node]:
-                if not visited[child]:  
-                    dfs(child, graph, visited, component)
-    
-        node = 0  
-        visited = [False]*V  
-        component = []
-        dfs(node, adj, visited, component)  
-        return component
+        visited = [False for _ in range(V)]
+        visited[0] = True
+        path = []
+        
+        def dfs(node):
+            nonlocal path
+            visited[node] = True
+            path.append(node)
+            for v in adj[node]:
+                if not visited[v]:
+                    dfs(v)
+        
+        dfs(0)
+        
+        return path
+
 
 #{ 
  # Driver Code Starts
