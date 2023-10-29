@@ -2,24 +2,26 @@
 
 from typing import List
 from queue import Queue
+
 class Solution:
-    #Function to return Breadth First Traversal of given graph.
     def bfsOfGraph(self, V: int, adj: List[List[int]]) -> List[int]:
-        OPEN = [0]
-        CLOSED = []
+        if V == 1:
+            return [0]
         
-        while OPEN:
-            node = OPEN.pop(0)
-            childern = adj[node]
-            for child in childern:
-                if child not in OPEN:
-                    if child not in CLOSED:
-                        OPEN.append(child)
+        queue = [0]
+        visited = [False for _ in range(V)]
+        visited[0] = True
+        path = []
+        while queue:
+            u = queue.pop(0)
+            for v in adj[u]:
+                if not visited[v]:
+                    visited[v] = True
+                    queue.append(v)
             
-            CLOSED.append(node)
+            path.append(u)
         
-        return CLOSED
-        # code here
+        return path
 
 
 #{ 
