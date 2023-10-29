@@ -1,26 +1,32 @@
-from collections import deque
-
 class Solution:
     def orangesRotting(self, grid: List[List[int]]) -> int:
-        visited, queue = set(), deque()
+        m, n = len(grid), len(grid[0])
+        changesDirections = [[-1, 0], [1, 0], [0, -1], [0, 1]]
+        time = -1
         
-        for row in range(len(grid)):
-            for col in range(len(grid[0])):
-                if grid[row][col] == 1:
-                    visited.add((row, col))
-                    
-                elif grid[row][col] == 2:
-                    queue.append((row, col))
-                    
-        ans = 0
+        queue = []
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] == 2:
+                    queue.append([i, j])
         
-        while visited and queue:
-            for _ in range(len(queue)):
-                r, c = queue.popleft()
-                for neighbours in ((r, c-1), (r, c+1), (r-1, c), (r+1, c)):
-                    if neighbours in visited:
-                        visited.remove(neighbours)
-                        queue.append(neighbours)
-            ans += 1
+        while queue:
+            for _ in range(len(queue)):            
+                i, j = queue.pop(0)
+                for di, dj in changesDirections:
+                    ni = i + di; nj = j + dj
+                    if 0 <= ni <= m - 1 and 0 <= nj <= n - 1:
+                        if grid[ni][nj] == 1:
+                            grid[ni][nj] = 2
+                            queue.append([ni, nj])
+                
+                grid[i][j] = 2
+                
+            time += 1
         
-        return -1 if visited else ans
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] == 1:
+                    return -1
+        
+        return max(0, time)
