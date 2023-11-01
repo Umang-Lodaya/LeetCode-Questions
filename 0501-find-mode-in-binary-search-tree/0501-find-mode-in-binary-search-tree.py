@@ -1,10 +1,7 @@
 class Solution:
     def findMode(self, root: Optional[TreeNode]) -> List[int]:
         def dfs(node, freq):
-            if node.val not in freq:
-                freq[node.val] = 0
-            freq[node.val] += 1
-            
+            freq[node.val] = freq.get(node.val, 0) + 1
             if node.left: dfs(node.left, freq)
             if node.right: dfs(node.right, freq)
         
