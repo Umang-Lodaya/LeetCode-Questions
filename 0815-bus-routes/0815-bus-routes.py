@@ -8,7 +8,7 @@ class Solution:
         
         # BFS Traversal 
         Q = deque()
-        Q.append([source,0])
+        Q.append([source, 0])
         travelled_route = set()
         
         while Q:
