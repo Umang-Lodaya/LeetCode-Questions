@@ -4,5 +4,9 @@ class Solution:
         for i, row in enumerate(nums):
             for j, x in enumerate(row):
                 res[i + j].insert(0, x)
-                
-        return chain(*res.values())
+        
+        ans = []
+        for k, v in res.items():
+            ans.extend(v)
+            
+        return ans
