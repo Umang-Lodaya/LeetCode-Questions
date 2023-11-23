@@ -3,18 +3,18 @@ class Solution:
         ans = []
         for i, j in zip(l, r):
             arr = nums[i:j + 1]
-            ans.append(self.Arithmetic(arr))
+            ans.append(self.isArithmetic(arr))
         
         return ans
     
-    def Arithmetic(self, arr):
+    def isArithmetic(self, arr):
         if len(arr) <= 2:
             return True
         arr.sort()
-        d = arr[1] - arr[0]
+        cd = arr[1] - arr[0]
         for inx in range(2, len(arr)):
-            cd = arr[inx] - arr[inx - 1]
-            if cd != d:
+            d = arr[inx] - arr[inx - 1]
+            if d != cd:
                 return False
         
         return True
