@@ -5,24 +5,24 @@
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
-<pre style="position: relative;"><strong>Input:</strong> word1 = ["ab", "c"], word2 = ["a", "bc"]
+<pre><strong>Input:</strong> word1 = ["ab", "c"], word2 = ["a", "bc"]
 <strong>Output:</strong> true
 <strong>Explanation:</strong>
 word1 represents string "ab" + "c" -&gt; "abc"
 word2 represents string "a" + "bc" -&gt; "abc"
-The strings are the same, so return true.<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+The strings are the same, so return true.</pre>
 
 <p><strong class="example">Example 2:</strong></p>
 
-<pre style="position: relative;"><strong>Input:</strong> word1 = ["a", "cb"], word2 = ["ab", "c"]
+<pre><strong>Input:</strong> word1 = ["a", "cb"], word2 = ["ab", "c"]
 <strong>Output:</strong> false
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</pre>
 
 <p><strong class="example">Example 3:</strong></p>
 
-<pre style="position: relative;"><strong>Input:</strong> word1  = ["abc", "d", "defg"], word2 = ["abcddefg"]
+<pre><strong>Input:</strong> word1  = ["abc", "d", "defg"], word2 = ["abcddefg"]
 <strong>Output:</strong> true
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</pre>
 
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
