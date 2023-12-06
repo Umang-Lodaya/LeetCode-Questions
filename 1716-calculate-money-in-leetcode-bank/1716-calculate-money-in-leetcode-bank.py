@@ -1,6 +1,7 @@
 class Solution:
     def totalMoney(self, n: int) -> int:
         w = n // 7
+        money = 0
         money = w * 28
         money += (7 * w * (w - 1))//2
 
